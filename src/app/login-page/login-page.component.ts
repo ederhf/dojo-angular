@@ -1,3 +1,4 @@
+import { UserModel } from './shared/models/user-model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
+
+  public user: UserModel;
 
   constructor() { }
 
