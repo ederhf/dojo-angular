@@ -25,10 +25,28 @@ export class AuthService {
       };
 
       this.http.post(url, body, httpOptions).toPromise().then((response) => {
+        user.Token = (response as any).token;
+        this.saveUserInLocalStorage(user);
         resolve(response);
       }).catch((error) => {
         reject(error);
       });
     });
+  }
+
+  public get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null && user.emailVerified !== false) ? true : false;
+  }
+
+  public getUserName(): string {
+    const userStringfied = localStorage.getItem('user');
+    const userParsed = JSON.parse(userStringfied);
+    return userParsed.email;
+  }
+
+  private saveUserInLocalStorage(user: UserModel): void {
+    const userStringfied = JSON.stringify(user);
+    localStorage.setItem('user', userStringfied);
   }
 }
