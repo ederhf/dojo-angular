@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    DashboardPageComponent
   ],
   imports: [
     BrowserModule,
