@@ -14,15 +14,18 @@ export class LoginPageComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.user = new UserModel();
   }
 
   public login() {
     this.authService.login(this.user)
       .then((result) => {
         // All right
+        alert('Usuário logado com sucesso');
       })
-      .catch((error) => {
+      .catch((result) => {
         // Something wrong didn't work
+        alert(result.error.error);
       });
   }
 
