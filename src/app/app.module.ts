@@ -8,13 +8,15 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { HeaderMenuComponent } from './header-menu/header-menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    HeaderMenuComponent
   ],
   imports: [
     BrowserModule,
