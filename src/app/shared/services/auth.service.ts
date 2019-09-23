@@ -34,6 +34,10 @@ export class AuthService {
     });
   }
 
+  public removeUserDataFromLocalStorage(): void {
+    localStorage.removeItem('user');
+  }
+
   public get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
